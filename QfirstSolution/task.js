@@ -1,11 +1,5 @@
-function start(){
-search = prompt("Enter Cafes Name")
-search = search.trim()
-search = search.toLowerCase()
-console.log(findCaliforniaCafes(search))
-alert("OutPut will seen in Console log")
-}
 
+alert("output Will show in console")
 function findCaliforniaCafes(searchString) {
     // You can store the given arrays in 2 internal variables
     const cafes = [
@@ -85,7 +79,7 @@ function findCaliforniaCafes(searchString) {
     // Your code goes here
     var results = []
     for (x in cafes) {
-        if (cafes[x]['name'].toLocaleLowerCase().indexOf(searchString) >= 0) {
+        if (cafes[x]['name'].indexOf(searchString) >= 0) {
 
             var id = cafes[x]['place_id']
             for (y in places) {
@@ -103,12 +97,9 @@ function findCaliforniaCafes(searchString) {
                 }
             }
         }
-        else{
-            alert('No DataFound')
-            start()
-        }
+        
     }
 
     return results
 }
-console.log(findCaliforniaCafes(search))
+console.log(findCaliforniaCafes("Avenue"))
